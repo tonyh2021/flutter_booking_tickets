@@ -1,6 +1,6 @@
 # flutter_booking_tickets
 
-A new Flutter project.
+A Flutter app to book tickets.
 
 ## Getting Started
 
