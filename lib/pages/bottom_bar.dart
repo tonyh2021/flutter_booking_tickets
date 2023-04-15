@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_booking_tickets/pages/home_page.dart';
+import 'package:flutter_booking_tickets/utils/app_styles.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _BottomBarState extends State<BottomBar> {
 
   static final List<Widget> _widgetOptions = [
     HomePage(),
-    const Text("Search"),
+    const Text("Ticket"),
     const Text("Ticket"),
     const Text("Profile"),
   ];
@@ -38,9 +39,9 @@ class _BottomBarState extends State<BottomBar> {
         elevation: 10,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.blueGrey,
+        selectedItemColor: Styles.primaryColor,
         type: BottomNavigationBarType.fixed,
-        unselectedItemColor: const Color(0xFF537591),
+        unselectedItemColor: Styles.blueColor,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
