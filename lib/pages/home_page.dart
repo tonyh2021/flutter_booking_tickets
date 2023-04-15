@@ -6,6 +6,7 @@ import 'package:flutter_booking_tickets/utils/app_styles.dart';
 import 'package:flutter_booking_tickets/widgets/hotel_view.dart';
 import 'package:flutter_booking_tickets/widgets/ticket_view.dart';
 import 'package:gap/gap.dart';
+import 'package:flutter_booking_tickets/utils/app_layout.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,10 +18,10 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(AppLayout.height(20)),
             child: Column(
               children: [
-                const Gap(40),
+                Gap(AppLayout.height(40)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -33,19 +34,20 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      width: 50,
-                      height: 50,
+                      width: AppLayout.width(50),
+                      height: AppLayout.height(50),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(AppLayout.height(10)),
                           image: const DecorationImage(
                               fit: BoxFit.fitHeight, image: AssetImage("assets/images/img_1.png"))),
                     )
                   ],
                 ),
-                const Gap(25),
+                Gap(AppLayout.height(25)),
                 Container(
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color(0xFFf4f6fd)),
-                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(AppLayout.height(10)), color: const Color(0xFFf4f6fd)),
+                  padding: EdgeInsets.all(AppLayout.height(12)),
                   child: Row(
                     children: [
                       const Icon(
@@ -59,7 +61,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Gap(40),
+                Gap(AppLayout.height(40)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -78,7 +80,7 @@ class HomePage extends StatelessWidget {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: AppLayout.width(20)),
             child: Row(
               children: ticketList
                   .map((ticket) => TicketView(
@@ -87,9 +89,9 @@ class HomePage extends StatelessWidget {
                   .toList(),
             ),
           ),
-          const Gap(10),
+          Gap(AppLayout.height(10)),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: AppLayout.width(20)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -104,10 +106,10 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          const Gap(15),
+          Gap(AppLayout.height(15)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: AppLayout.width(20)),
             child: Row(
               children: hostList
                   .map((hotel) => HotelView(
