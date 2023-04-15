@@ -1,8 +1,9 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_booking_tickets/utils/app_data.dart';
 import 'package:flutter_booking_tickets/utils/app_styles.dart';
+import 'package:flutter_booking_tickets/widgets/hotel_view.dart';
 import 'package:flutter_booking_tickets/widgets/ticket_view.dart';
 import 'package:gap/gap.dart';
 
@@ -43,10 +44,7 @@ class HomePage extends StatelessWidget {
                 ),
                 const Gap(25),
                 Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xFFf4f6fd)
-                  ),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color(0xFFf4f6fd)),
                   padding: const EdgeInsets.all(12),
                   child: Row(
                     children: [
@@ -70,18 +68,54 @@ class HomePage extends StatelessWidget {
                         onTap: () {
                           if (kDebugMode) {
                             print("Go to view all...");
-                          }},
-                        child: Text(
-                            "View all",
-                            style: Styles.textStyle.copyWith(color: Styles.primaryColor)
-                        )
-                    ),
+                          }
+                        },
+                        child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor))),
                   ],
                 ),
               ],
             ),
           ),
-          TicketView(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              children: ticketList
+                  .map((ticket) => TicketView(
+                        ticket: ticket,
+                      ))
+                  .toList(),
+            ),
+          ),
+          const Gap(10),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Hotels", style: Styles.headLineStyle2),
+                InkWell(
+                    onTap: () {
+                      if (kDebugMode) {
+                        print("Go to view all...");
+                      }
+                    },
+                    child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor))),
+              ],
+            ),
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              children: hostList
+                  .map((hotel) => HotelView(
+                        hotel: hotel,
+                      ))
+                  .toList(),
+            ),
+          ),
         ],
       ),
     );
