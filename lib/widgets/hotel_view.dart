@@ -21,8 +21,8 @@ class HotelView extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade200,
-              blurRadius: AppLayout.height(20),
-              spreadRadius: AppLayout.height(5),
+              blurRadius: 20,
+              spreadRadius: 5,
             )
           ]),
       child: Column(

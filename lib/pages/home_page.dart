@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_booking_tickets/utils/app_data.dart';
 import 'package:flutter_booking_tickets/utils/app_styles.dart';
 import 'package:flutter_booking_tickets/widgets/hotel_view.dart';
+import 'package:flutter_booking_tickets/widgets/section_title.dart';
 import 'package:flutter_booking_tickets/widgets/ticket_view.dart';
 import 'package:gap/gap.dart';
 import 'package:flutter_booking_tickets/utils/app_layout.dart';
@@ -62,19 +63,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Gap(AppLayout.height(40)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Upcoming Flights", style: Styles.headLineStyle2),
-                    InkWell(
-                        onTap: () {
-                          if (kDebugMode) {
-                            print("Go to view all...");
-                          }
-                        },
-                        child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor))),
-                  ],
-                ),
+                const SectionTitle(title: "Upcoming Flights", subtitle: "View all"),
               ],
             ),
           ),
@@ -92,19 +81,7 @@ class HomePage extends StatelessWidget {
           Gap(AppLayout.height(10)),
           Container(
             padding: EdgeInsets.symmetric(horizontal: AppLayout.width(20)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Hotels", style: Styles.headLineStyle2),
-                InkWell(
-                    onTap: () {
-                      if (kDebugMode) {
-                        print("Go to view all...");
-                      }
-                    },
-                    child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor))),
-              ],
-            ),
+            child: const SectionTitle(title: "Hotels", subtitle: "View all"),
           ),
           Gap(AppLayout.height(15)),
           SingleChildScrollView(

@@ -1,7 +1,8 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_booking_tickets/pages/home_page.dart';
+import 'package:flutter_booking_tickets/pages/search_page.dart';
+import 'package:flutter_booking_tickets/pages/ticket_page.dart';
 import 'package:flutter_booking_tickets/utils/app_styles.dart';
 
 class BottomBar extends StatefulWidget {
@@ -15,9 +16,9 @@ class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = [
-    HomePage(),
-    const Text("Ticket"),
-    const Text("Ticket"),
+    const HomePage(),
+    const SearchPage(),
+    const TicketPage(),
     const Text("Profile"),
   ];
 
@@ -46,26 +47,21 @@ class _BottomBarState extends State<BottomBar> {
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
-              label: "Home"
-          ),
+              label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
-              label: "Search"
-          ),
+              label: "Search"),
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
-              label: "Ticket"
-          ),
+              label: "Ticket"),
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
-              label: "Profile"
-          ),
+              label: "Profile"),
         ],
       ),
     );
   }
-
 }
