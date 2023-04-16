@@ -73,6 +73,7 @@ class HomePage extends StatelessWidget {
             child: Row(
               children: ticketList
                   .map((ticket) => TicketView(
+                        rightMargin: true,
                         shouldColor: true,
                         ticket: ticket,
                       ))
