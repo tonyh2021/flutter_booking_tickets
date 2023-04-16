@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_booking_tickets/pages/home_page.dart';
+import 'package:flutter_booking_tickets/pages/profile_page.dart';
 import 'package:flutter_booking_tickets/pages/search_page.dart';
 import 'package:flutter_booking_tickets/pages/ticket_page.dart';
 import 'package:flutter_booking_tickets/utils/app_styles.dart';
@@ -19,7 +20,7 @@ class _BottomBarState extends State<BottomBar> {
     const HomePage(),
     const SearchPage(),
     const TicketPage(),
-    const Text("Profile"),
+    const ProfilePage(),
   ];
 
   void _onItemTapped(int index) {

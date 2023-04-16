@@ -14,7 +14,6 @@ class TicketPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = AppLayout.screenWidth();
     return Scaffold(
       body: Stack(
         children: [
@@ -129,6 +128,30 @@ class TicketPage extends StatelessWidget {
                 ),
               )
             ],
+          ),
+          Positioned(
+            left: AppLayout.height(22),
+            top: AppLayout.height(295),
+            child: Container(
+              padding: const EdgeInsets.all(3),
+              decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Styles.textColor, width: 2)),
+              child: const CircleAvatar(
+                maxRadius: 4,
+                backgroundColor: Styles.textColor,
+              ),
+            ),
+          ),
+          Positioned(
+            right: AppLayout.height(22),
+            top: AppLayout.height(295),
+            child: Container(
+              padding: const EdgeInsets.all(3),
+              decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Styles.textColor, width: 2)),
+              child: const CircleAvatar(
+                maxRadius: 4,
+                backgroundColor: Styles.textColor,
+              ),
+            ),
           )
         ],
       ),

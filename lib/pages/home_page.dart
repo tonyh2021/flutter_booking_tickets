@@ -1,5 +1,4 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_booking_tickets/utils/app_data.dart';
 import 'package:flutter_booking_tickets/utils/app_styles.dart';
