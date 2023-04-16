@@ -73,12 +73,13 @@ class HomePage extends StatelessWidget {
             child: Row(
               children: ticketList
                   .map((ticket) => TicketView(
+                        shouldColor: true,
                         ticket: ticket,
                       ))
                   .toList(),
             ),
           ),
-          Gap(AppLayout.height(10)),
+          Gap(AppLayout.height(40)),
           Container(
             padding: EdgeInsets.symmetric(horizontal: AppLayout.width(20)),
             child: const SectionTitle(title: "Hotels", subtitle: "View all"),

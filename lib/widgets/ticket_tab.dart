@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_booking_tickets/utils/app_layout.dart';
 
-class Tabs extends StatelessWidget {
+class TicketTab extends StatelessWidget {
   final List<String> tabs;
-  const Tabs({Key? key, required this.tabs}) : super(key: key);
+  const TicketTab({Key? key, required this.tabs}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

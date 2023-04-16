@@ -3,7 +3,7 @@ import 'package:flutter_booking_tickets/utils/app_layout.dart';
 import 'package:flutter_booking_tickets/utils/app_styles.dart';
 import 'package:flutter_booking_tickets/widgets/icon_text_widget.dart';
 import 'package:flutter_booking_tickets/widgets/section_title.dart';
-import 'package:flutter_booking_tickets/widgets/tabs.dart';
+import 'package:flutter_booking_tickets/widgets/ticket_tab.dart';
 import 'package:gap/gap.dart';
 
 class SearchPage extends StatefulWidget {
@@ -16,6 +16,7 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
+    final width = AppLayout.screenWidth();
     return Scaffold(
       backgroundColor: Styles.bgColor,
       body: ListView(
@@ -27,7 +28,7 @@ class _SearchPageState extends State<SearchPage> {
             style: Styles.headLineStyle1.copyWith(fontSize: AppLayout.width(35)),
           ),
           Gap(AppLayout.height(20)),
-          const Tabs(tabs: ["Airline tickets", "Hotels"]),
+          const TicketTab(tabs: ["Airline tickets", "Hotels"]),
           Gap(AppLayout.height(25)),
           const IconText(icon: Icons.flight_takeoff_rounded, title: "Departure"),
           Gap(AppLayout.height(15)),
@@ -54,7 +55,7 @@ class _SearchPageState extends State<SearchPage> {
             children: [
               Container(
                 height: AppLayout.height(400),
-                width: AppLayout.screenWidth() * 0.42,
+                width: width * 0.42,
                 padding: EdgeInsets.symmetric(horizontal: AppLayout.width(15), vertical: AppLayout.height(15)),
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -78,7 +79,7 @@ class _SearchPageState extends State<SearchPage> {
                   Stack(
                     children: [
                       Container(
-                        width: AppLayout.screenWidth() * 0.44,
+                        width: width * 0.44,
                         height: AppLayout.height(190),
                         decoration: BoxDecoration(
                             color: const Color(0xFF3ab8b8),
@@ -115,7 +116,7 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                   Gap(AppLayout.height(15)),
                   Container(
-                    width: AppLayout.screenWidth() * 0.44,
+                    width: width * 0.44,
                     height: AppLayout.height(185),
                     decoration: BoxDecoration(
                         color: const Color(0xFFec6545),
